@@ -2,6 +2,12 @@
 
 <layout xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="myViewModel"
+            type="com.example.demousingjetpack.MainActivityViewModel" />
+    </data>
+
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -30,6 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/editTextLayout"
             android:layout_centerHorizontal="true"
+            android:onClick="@{()->myViewModel.setTotal(myViewModel.editTextValue)}"
             android:text="@string/add" />
 
         <TextView
@@ -40,6 +47,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
             android:textSize="21sp"
+            android:text="@{String.valueOf(myViewModel.totalData)}"
             tools:text="Total: 120.0" />
 
     </RelativeLayout>
