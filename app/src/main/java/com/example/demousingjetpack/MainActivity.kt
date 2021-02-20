@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        viewModelFactory = MainActivityViewModelFactory(10.5, binding.editText)
+        viewModelFactory = MainActivityViewModelFactory(10.5)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainActivityViewModel::class.java)
         binding.myViewModel = viewModel
         binding.lifecycleOwner = this
